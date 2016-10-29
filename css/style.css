@@ -1,0 +1,363 @@
+/**
+* html5doctor.com Reset Stylesheet v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/)
+* Richard Clark (http://richclarkdesign.com)
+* http://cssreset.com
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video
+{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+body {
+    line-height:1;
+    font-family: 'Damion', cursive;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+nav ul {
+    list-style:none;
+}
+blockquote, q {
+    quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+del {
+    text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+/* change border colour to suit your needs */
+hr {
+    display:none;
+    height:0;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+input, select {
+    vertical-align:middle;
+}
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+html,
+body {
+    height: 100%;
+}
+
+/* header */
+
+.navwrap {
+    position: fixed;
+    width: 30%;
+    height: 100%;
+    z-index: 9;
+    left: -100%;
+    transition: 0.5s linear;
+}
+nav {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+.active {
+    left: 0;
+}
+nav > ul {
+    position: absolute;
+    top: 30%;
+    right: 80px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.navwrap > nav > ul > li {
+    margin-bottom: 80px;
+}
+.navwrap > nav > ul > li > a{
+    position: relative;
+    font-size: 32px;
+    color: #218c8d;
+}
+.navwrap > nav > ul > li > a > span {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 32px;
+    top: 10px;
+    background: #ff4ca9;
+}
+.menu-icon {
+    position: fixed;
+    display: block;
+    width: 40px;
+    height: 32px;
+    cursor: pointer;
+    left: 30px;
+    top: 50%;
+    margin-top: -16px;
+    z-index: 9;
+}
+.menu-icon > div {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: white;
+    transition: 0.2s ease-in;
+}
+.bar1 {
+    top: 0;
+    z-index: 1;
+}
+.bar2 {
+    top: 50%;
+    margin-top: -2px;
+}
+.bar3 {
+    bottom: 0;
+    z-index: 1;
+}
+.active2 > div {
+    background: #218c8d;
+}
+.active2 > .bar1 {
+    transform: rotate(-45deg);
+    top: 50%;
+    margin-top: -2px;
+}
+.active2 > .bar2 {
+    display: none;
+}
+.active2 > .bar3 {
+    transform: rotate(45deg);
+    top: 50%;
+    margin-top: -2px;
+}
+
+
+
+.container {
+    position: absolute;
+    top: 60%;
+    right: 15%;
+}
+.container > h2 {
+    text-align: right;
+    font-size: 60px;
+    color: white;
+}
+
+/* CSS for sliderContainer */
+.imageSlider {
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+    position: relative;
+}
+.imageSlider .sliderContainer {padding: 0; margin: 0;}
+
+.imageSlider .sliderContainer:after {clear: both; content: ' '; display: block;}
+.imageSlider .sliderContainer li {
+    list-style: none; margin: 0; float: left;
+    width: 100%;
+    height: 100%;
+}
+
+.pageOne {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: white;
+    overflow: hidden;
+}
+.pageOne > div {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+}
+#text {
+    width: 100%;
+    height: 10%;
+    background: white;
+    bottom: 0;
+}
+#text > p {
+    text-align: center;
+    color: #218c8d;
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.color1 {
+    left: 0;
+    background: #6ccecb;
+}
+.color2 {
+    left: 25%;
+    background: #f9e559;
+}
+.color3 {
+    left: 50%;
+    background: #ef7126;
+}
+.color4 {
+    left: 75%;
+    background: #8edc9d;
+}
+.pageOne > div > span {
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    font-size: 60px;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    opacity: 0;
+    color: white;
+}
+
+.pageTwo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #6ccecb;
+}
+.pageTwo > article {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.act1 {
+    opacity: 0;
+    margin-top: 100px;
+}
+.act2 {
+    opacity: 0;
+    margin-top: 100px;
+    top: 100%;
+}
+.act3 {
+    opacity: 0;
+    margin-top: 100px;
+    top: 200%;
+    z-index: 1;
+}
+.pageTwo > article > div {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+}
+.act1 > div {
+    background: #afeaaa;
+}
+.act2 > div {
+    background: #218c8d;
+}
+.act3 > div {
+    background: #104790;
+}
+.pageTwo > article > div > p {
+    top: 3%;
+    right: 3%;
+    position: absolute;
+    font-size: 80px;
+    font-weight: bold;
+    opacity: 0;
+}
+.pageTwo > article > div > span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: white;
+}
+.pageTwo > article > div > span > p {
+    position: absolute;
+    left: 10%;
+    bottom: 15%;
+    font-size: 60px;
+    opacity: 0;
+}
+.act1 > div > p {
+    color: #afeaaa;
+}
+.act1 > div > span > p {
+    color: #afeaaa;
+}
+.act2 > div > p {
+    color: #218c8d;
+}
+.act2 > div > span > p {
+    color: #218c8d;
+}
+.act3 > div > p {
+    color: #104790;
+}
+.act3 > div > span > p {
+    color: #104790;
+}
+
+
+
+
+
+
+
+
+
+

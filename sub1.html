@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Color.</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
+    <script src="js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navwrap">
+            <nav>
+                <ul>
+                    <li class="menu1"><a href="index.html">pageMain<span></span></a></li>
+                    <li class="menu2"><a href="sub1.html">pageOne<span></span></a></li>
+                    <li class="menu3"><a href="sub2.html">pageTwo<span></span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="menu-icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </header>
+    <script>
+        $(document).ready(function(){
+            $(".menu-icon").click(function(){
+                $(".navwrap").toggleClass('active');
+                $(".menu-icon").toggleClass('active2');
+            });
+            $(".menu1 > a").mouseenter(function(){
+                $(this).children().animate({
+                    width: '100%'
+                },'ease-in', function(){
+                    $(this).animate({
+                        width: 0
+                    },'ease-in');
+                });
+            });
+            $(".menu2 > a").mouseenter(function(){
+                $(this).children().animate({
+                    width: '100%'
+                },'ease-in', function(){
+                    $(this).animate({
+                        width: 0
+                    },'ease-in');
+                });
+            });
+            $(".menu3 > a").mouseenter(function(){
+                $(this).children().animate({
+                    width: '100%'
+                },'ease-in', function(){
+                    $(this).animate({
+                        width: 0
+                    },'ease-in');
+                });
+            });
+
+            function bar() {
+                $(this).children().animate({
+                    width: '100%'
+                },'ease-in',function(){
+                    $(this).animate({
+                        width: 0
+                    },'ease-in');
+                });
+            };
+        });
+    </script>
+    <section class="pageOne">
+        <a name="pageOne"></a>
+        <div class="color1"><span>&#35;6ccecb</span></div>
+        <div class="color2"><span>&#35;f9e559</span></div>
+        <div class="color3"><span>&#35;ef7126</span></div>
+        <div class="color4"><span>&#35;8edc9d</span></div>
+        <div id="text"><p>cancel</p></div>
+    </section>
+    <script>
+        $(document).ready(function(){
+            $(".color1").click(function(){
+                $(".color1").stop().animate({
+                    width: '100%'
+                },'ease-out');
+                $(".color2").stop().animate({
+                    width: 0,
+                    left: '100%'
+                },'ease-out');
+                $(".color3").stop().animate({
+                    width: 0,
+                    left: '100%'
+                },'ease-out');
+                $(".color4").stop().animate({
+                    width: 0,
+                    left: '100%'
+                },'ease-out');
+                $(".color1 > span").stop().animate({
+                    opacity: 1
+                },'ease-out');
+            });
+            $(".color2").click(function(){
+                $(".color2").stop().animate({
+                    left: 0,
+                    width: '100%'
+                },'ease-out');
+                $(".color1").stop().animate({
+                    width: 0
+                },'ease-out');
+                $(".color3").stop().animate({
+                    width: 0,
+                    left: '100%'
+                },'ease-out');
+                $(".color4").stop().animate({
+                    width: 0,
+                    left: '100%'
+                },'ease-out');
+                $(".color2 > span").stop().animate({
+                    opacity: 1
+                },'ease-out');
+            });
+            $(".color3").click(function(){
+                $(".color3").stop().animate({
+                    left: 0,
+                    width: '100%'
+                },'ease-out');
+                $(".color1").stop().animate({
+                    width: 0
+                },'ease-out');
+                $(".color2").stop().animate({
+                    width: 0,
+                    left: 0
+                },'ease-out');
+                $(".color4").stop().animate({
+                    width: 0,
+                    left: '100%'
+                },'ease-out');
+                $(".color3 > span").stop().animate({
+                    opacity: 1
+                },'ease-out');
+            });
+            $(".color4").click(function(){
+                $(".color4").stop().animate({
+                    left: 0,
+                    width: '100%'
+                },'ease-out');
+                $(".color1").stop().animate({
+                    width: 0,
+                    left: 0
+                },'ease-out');
+                $(".color2").stop().animate({
+                    width: 0,
+                    left: 0
+                },'ease-out');
+                $(".color3").stop().animate({
+                    width: 0,
+                    left: 0
+                },'ease-out');
+                $(".color4 > span").stop().animate({
+                    opacity: 1
+                },'ease-out');
+            });
+            $("#text").click(function(){
+                $(".color1").animate({
+                    width: '25%',
+                    left: 0
+                },'ease-out',function(){
+                    $(this).children().animate({
+                        opacity: 0
+                    });
+                });
+                $(".color2").animate({
+                    width: '25%',
+                    left: '25%'
+                },'ease-out',function(){
+                    $(this).children().animate({
+                        opacity: 0
+                    });
+                });
+                $(".color3").animate({
+                    width: '25%',
+                    left: '50%'
+                },'ease-out',function(){
+                    $(this).children().animate({
+                        opacity: 0
+                    });
+                });
+                $(".color4").animate({
+                    width: '25%',
+                    left: '75%'
+                },'ease-out',function(){
+                    $(this).children().animate({
+                        opacity: 0
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
