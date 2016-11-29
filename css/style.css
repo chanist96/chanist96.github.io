@@ -53,13 +53,12 @@ table {
 section,
 body,
 html {
-    height: 100%;
-    width: 100%;
+}
+.cards {
+    display: inline-block;
 }
 
 #cardsContainer {
-    height: 80%;
-    width: 80%;
 }
 
 #cardsContainer li{

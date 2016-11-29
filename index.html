@@ -9,8 +9,9 @@
     <title>card game</title>
     <script>
         var colorsArray = ['red', 'blue', 'green', 'yellow'];
+        var num = [1,2,3,4];
         var currentCardNum = 0;
-
+        
         $(document).ready(function(){
             var $cardsContainer = $('#cardsContainer');
 
@@ -20,8 +21,13 @@
             });
 
             var cardsContainerClone = $cardsContainer.clone().addClass('clone');
-            $cardsContainer.prepend(cardsContainerClone);
+            $('.cards').prepend(cardsContainerClone);
+            
+            $.each(num, function (idx, val) {
+                $cardsContainer.children().attr('data-num', val);
+            });
         });
+        
     </script>
 </head>
 
