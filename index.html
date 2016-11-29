@@ -24,7 +24,7 @@
             $('.cards').prepend(cardsContainerClone);
             
             $.each(num, function (idx, val) {
-                $cardsContainer.children().attr('data-num', val);
+                $cardsContainer.children().eq(idx).attr('data-num', val);
             });
         });
         
