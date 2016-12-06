@@ -35,14 +35,20 @@
                 if (clickItem.length > 0 && clickItem.length < 2) {
                     clickItem.push($(this).attr('data-cloneColor'));
                     console.log(clickItem.length);
-                    if (clickItem[0] == clickItem[1]) {
+                    if (clickItem[0] == clickItem[1]) { // == 과 === 의 차이점도 한번 찾아보시면 좋겠습니다 :-)
+                      /*
+                      문자열은 문자열을 담고 있는 변수와 조합할 수 있습니다.
+                      위에 color로 할당하신 변수가 이미 현재 클릭된 카드의 컬러를 담고 있는 문자열이죠.
+                      현재 클릭한 카드의 color와 동일한 카드를 비활성화할 것이므로, color 변수를 활용할 수 있을것 같군요.
+                      "li[data-color='" + color + "']"
+                      위 구문을 console.log를 이용해서 출력해보시고 활용하시면 어떨까합니다. :-)
+                      */
                         $("li[data-color='red']").css({
                             'opacity': '0'
                         });
                         clickItem = [];
                     }
-                }
-                else if (clickItem.length < 1) {
+                } else if (clickItem.length < 1) { //else if 줄바꿈을 하지 않는 것이 더 보기 좋지 않을까요?
                     clickItem.push($(this).attr('data-color'));
                     console.log(clickItem.length);
                     $(this).css({
