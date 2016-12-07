@@ -20,7 +20,7 @@
 //            var $backColor = $(this).css('background-color');
 
             $.each(colorsArray, function (idx, val) {
-                var $li = $('<li/>', {'style': 'background-color:' + val[random]});
+                var $li = $('<li/>', {'style': 'background-color:' + colorsArray[random]});
                 $cardsContainer.append($li);
             });
 
