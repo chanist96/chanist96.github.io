@@ -13,13 +13,16 @@
         var secondItem = [];
         var color = 0;
         var cloneColor = 0;
-        var random = Math.floor(Math.random() * colorsArray.length);
+        // var random = Math.floor(Math.random() * colorsArray.length);
+        var random; //여기서는 랜덤값을 담을 변수명만 설정.
         
         $(document).ready(function(){
             var $cardsContainer = $('#cardsContainer');
 //            var $backColor = $(this).css('background-color');
 
             $.each(colorsArray, function (idx, val) {
+                //colorsArray의 원소 수만큼 반복 실행될때마다 새로운 random 값을 생성하여 colorArray의 index로 활용합니다.
+                random = Math.floor(Math.random() * colorsArray.length);
                 var $li = $('<li/>', {'style': 'background-color:' + colorsArray[random]});
                 $cardsContainer.append($li);
             });
