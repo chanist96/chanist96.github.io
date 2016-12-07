@@ -11,31 +11,35 @@
         var colorsArray = ['red', 'blue', 'green', 'yellow'];
         var firstItem = [];
         var secondItem = [];
+        var backColor = [];
         var color = 0;
         var cloneColor = 0;
-        var random = Math.floor(Math.random() * colorsArray.length);
+        var random;
         
         $(document).ready(function(){
             var $cardsContainer = $('#cardsContainer');
-//            var $backColor = $(this).css('background-color');
 
             $.each(colorsArray, function (idx, val) {
-                var $li = $('<li/>', {'style': 'background-color:' + colorsArray[random]});
+                random = Math.floor(Math.random() * colorsArray.length);
+                var $li = $('<li/>');
                 $cardsContainer.append($li);
+                $cardsContainer.children().eq(idx).css('background-color', colorsArray[random]);
             });
-
+            
             $.each(colorsArray, function (idx, val) {
                 var cardsContainerClone = $cardsContainer.children().eq(idx).clone().addClass('clone');
                 $cardsContainer.append(cardsContainerClone);
+                backColor.push($($cardsContainer).children().eq(idx).css('background-color'));
+            });
+            
+            $.each(backColor, function (idx, val) {
                 $cardsContainer.children().eq(idx).attr('data-color', val).attr('data-cloneColor', val);
-                $('.clone').eq(idx).attr('data-color', val).attr('data-cloneColor', val);
-//                $cardsContainer.children().attr('data-color', backColor);
-//                $('.clone').attr('data-cloneColor', backColor)
+                $('.clone').eq(idx).attr('data-cloneColor', val).attr('data-color', val);
             });
             
             $('.cards ul').children().click(function(){
                 if (firstItem.length > 0 && firstItem.length < 2) {
-                    cloneColor = $(this).attr('data-color');
+                    cloneColor = $(this).attr('data-cloneColor');
                     secondItem.push($(this).attr('data-cloneColor'));
                     if (firstItem[0] === secondItem[0]) {
                         $("li[data-color='" + color + "']").css({
