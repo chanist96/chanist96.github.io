@@ -59,6 +59,7 @@ html {
 }
 
 #cardsContainer {
+    width: 560px;
 }
 
 #cardsContainer li{
@@ -66,4 +67,5 @@ html {
     width: 100px;
     height: 200px;
     float: left;
+    margin: 20px;
 }

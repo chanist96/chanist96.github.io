@@ -9,15 +9,18 @@
     <title>card game</title>
     <script>
         var colorsArray = ['red', 'blue', 'green', 'yellow'];
-        var clickItem = [];
+        var firstItem = [];
+        var secondItem = [];
         var color = 0;
         var cloneColor = 0;
+        var random = Math.floor(Math.random() * colorsArray.length);
         
         $(document).ready(function(){
             var $cardsContainer = $('#cardsContainer');
+//            var $backColor = $(this).css('background-color');
 
             $.each(colorsArray, function (idx, val) {
-                var $li = $('<li/>', {'style': 'background-color:' + val});
+                var $li = $('<li/>', {'style': 'background-color:' + val[random]});
                 $cardsContainer.append($li);
             });
 
@@ -26,29 +29,42 @@
                 $cardsContainer.append(cardsContainerClone);
                 $cardsContainer.children().eq(idx).attr('data-color', val).attr('data-cloneColor', val);
                 $('.clone').eq(idx).attr('data-color', val).attr('data-cloneColor', val);
+//                $cardsContainer.children().attr('data-color', backColor);
+//                $('.clone').attr('data-cloneColor', backColor)
             });
             
             $('.cards ul').children().click(function(){
-                color = $(this).attr('data-color');
-                console.log(color);
-                console.log(cloneColor);
-                if (clickItem.length > 0 && clickItem.length < 2) {
-                    clickItem.push($(this).attr('data-cloneColor'));
-                    console.log(clickItem.length);
-                    if (clickItem[0] == clickItem[1]) {
-                        $("li[data-color='red']").css({
-                            'opacity': '0'
+                if (firstItem.length > 0 && firstItem.length < 2) {
+                    cloneColor = $(this).attr('data-color');
+                    secondItem.push($(this).attr('data-cloneColor'));
+                    if (firstItem[0] === secondItem[0]) {
+                        $("li[data-color='" + color + "']").css({
+                            'display': 'none'
                         });
-                        clickItem = [];
+                        firstItem = [];
+                        secondItem = [];
+                        
+                    }else if (firstItem[0] != secondItem[0]) {
+                        $("li[data-color='" + color + "']").css({
+                            'opacity': '1'
+                        });
+                        $("li[data-color='" + cloneColor + "']").css({
+                            'opacity': '1'
+                        });
+                        firstItem = [];
+                        secondItem = [];
                     }
-                }
-                else if (clickItem.length < 1) {
-                    clickItem.push($(this).attr('data-color'));
-                    console.log(clickItem.length);
+                }else if (firstItem.length < 1) {
+                    color = $(this).attr('data-color');
+                    firstItem.push($(this).attr('data-color'));
                     $(this).css({
                         'opacity': '0.8'
-                    })
+                    });
                 }
+                console.log(color);
+                console.log(cloneColor);
+                console.log(firstItem.length);
+                console.log(secondItem.length);
             });
         });
     </script>
